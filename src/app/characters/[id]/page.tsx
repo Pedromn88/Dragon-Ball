@@ -8,7 +8,7 @@ import CardComponentPlanets from "@/components/Card/cardPlanets";
 import CardComponentPlanetsMini from "@/components/Card/cardPlanetMini";
 import CardComponentCharactersMini from "@/components/Card/cardCharactersMini";
 
-const id: React.FC<{ params: Params }> = ({ params }) => {
+const Id: React.FC<{ params: Params }> = ({ params }) => {
   const { id } = params;
   const [data, setData] = useState<getOneCharacter>();
 
@@ -94,11 +94,14 @@ const id: React.FC<{ params: Params }> = ({ params }) => {
                   {data &&
                     data.transformations.map((trans, i) => {
                       return (
-                        <CardComponentCharactersMini
-                          img={trans.image}
-                          name={trans.name}
-                          id={trans.id}
-                        />
+                        <span key={i}>
+                          <CardComponentCharactersMini
+                            img={trans.image}
+                            name={trans.name}
+                            id={trans.id}
+                            race={data?.race}
+                          />
+                        </span>
                       );
                     })}
                 </span>
@@ -124,4 +127,4 @@ const id: React.FC<{ params: Params }> = ({ params }) => {
   );
 };
 
-export default id;
+export default Id;

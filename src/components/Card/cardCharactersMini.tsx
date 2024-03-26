@@ -16,7 +16,7 @@ const CardComponentCharactersMini: React.FC<cardInfo> = ({
             width={0}
             height={0}
             sizes="100vw"
-            alt={`Picture of ${name}`}
+            alt={`Picture of ${name} + ${race}`}
             className={`img-card-race`}
             style={{
               width: "100%",
